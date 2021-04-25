@@ -1,8 +1,10 @@
+
 """
 Read file into texts and calls.
 It's ok if you don't understand how to read files
 """
 import csv
+import operator
 with open('texts.csv', 'r') as f:
     reader = csv.reader(f)
     texts = list(reader)
@@ -20,3 +22,16 @@ Print a message:
 September 2016.".
 """
 
+# create empty dictionry to collect the output
+d = {}
+# iterate throught the calls to get first two columns from 
+# csv files which has phone number 
+for call in calls:
+    # loop in csv file for first two columns which are our telephone number
+    for phone in call[:2]:
+        # print(call[:2])
+        d[phone] = d.get(phone, 0) + int(call[3])
+longest_call_duration = max(d.items(), key=operator.itemgetter(1))
+
+print(longest_call_duration[0], 'spent the longest time,', longest_call_duration[1],
+      'seconds, on the phone during September 2016.')

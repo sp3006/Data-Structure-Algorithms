@@ -30,9 +30,14 @@ first two columns are pone numbers
 
 """
 
-get_length_for_calls = len(calls)
-get_length_for_texts = len(texts)
+telephone_numbers = set()
+for i in range(len(texts)):
+    # appending the dictionary with unique records
+    telephone_numbers.add(texts[i][0])
+    telephone_numbers.add(texts[i][1])
+for i in range(len(calls)):
+    telephone_numbers.add(calls[i][0])
+    telephone_numbers.add(calls[i][1])
 
-merge_data_sets = set(zip(texts , calls))
-
-print(merge_data_sets[0][0])
+print("There are {} different telephone numbers in the records.".format(
+    len(telephone_numbers)))
