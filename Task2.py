@@ -28,10 +28,13 @@ d = {}
 # csv files which has phone number 
 for call in calls:
     # loop in csv file for first two columns which are our telephone number
-    for phone in call[:2]:
-        # print(call[:2])
-        d[phone] = d.get(phone, 0) + int(call[3])
-longest_call_duration = max(d.items(), key=operator.itemgetter(1))
+    for i, phone in enumerate(call[:2]):
+        # print(call[:2]) 
+        # in below we are 
+        print("This is " , d.get(phone, i))
+        d[phone] = d.get(phone, i) + int(call[3])
+        print(d[phone])
+longest_call_duration = max(d.items(), key=operator.itemgetter(i))
 
 print(longest_call_duration[0], 'spent the longest time,', longest_call_duration[1],
       'seconds, on the phone during September 2016.')
