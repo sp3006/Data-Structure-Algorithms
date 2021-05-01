@@ -30,7 +30,9 @@ for call in calls:
     # loop in csv file for first two columns which are our telephone number
     for i, phone in enumerate(call[:2]):
         # print(call[:2]) 
-        # in below we are 
+        # in below we areusing the get method  
+        # where we observe if there is not phone it will put the ith index
+        # as default value
         print("This is " , d.get(phone, i))
         d[phone] = d.get(phone, i) + int(call[3])
         print(d[phone])
