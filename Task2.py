@@ -33,6 +33,8 @@ for call in calls:
         # in below we areusing the get method  
         # where we observe if there is not phone it will put the ith index
         # as default value
+        # .get(<key>) searches dictionary d for <key> and returns the associated value if it is found. 
+        # If <key> is not found, it returns None
         print("This is " , d.get(phone, i))
         d[phone] = d.get(phone, i) + int(call[3])
         print(d[phone])

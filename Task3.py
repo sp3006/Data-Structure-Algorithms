@@ -43,3 +43,25 @@ Print the answer as a part of a message::
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
+# PART A
+# the below get_numbers iterate thru the calls and checks if the 
+# call has '(080)' in the string
+# the get_numbers_for_banglore has number which has "(080)" which is 
+# banglore area code
+# Another approach for the same use case is to  
+# first declare the empty list variable to collect the output form the
+# for loops in two stages with if coditions however we are using
+# list comprehension in below implementations
+get_numbers_called_by_banglore_population = [call[1] for call in calls if call[0][:5] == '(080)']
+# in below we will check if the number has closed bracket
+# check if it has open  and closed brackets
+# replace all the ocurrences with zero space charcater
+fetch_std_codes = [phone[:phone.find(')') + 1].replace('(', '').replace(')', '') if ')' in phone else phone[0:4] for phone in
+              get_numbers_called_by_banglore_population]
+print('The numbers called by people in Bangalore have codes:\n' + '\n'.join(sorted(set(fetch_std_codes))))
+
+# PART B
+print()
+print('{0:.2f}'.format(
+    (len([phone for phone in get_numbers_called_by_banglore_population if '(080)' in phone]) / len(get_numbers_called_by_banglore_population)) * 100),
+    'percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.')
