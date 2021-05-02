@@ -1,0 +1,9 @@
+-Task 4
+# Time analysis
+# 
+# Our above code with dictionay access is simple array data structure access and according to 
+# https://www.bigocheatsheet.com/ & udacity lesson explain Big(O) we observe below
+# The get_senders_num_list has, get_caller_receivers_num_list and get_markts_outgoing 
+# O(n) time complexity which can be represented as O(3n)
+# The call using sorted function sorted(get_markts_outgoing) O(nlogn) complexity
+# O(3n) + O(nlogn) --> O(3n + nlog(n) ) --> Θ(n log(n))
