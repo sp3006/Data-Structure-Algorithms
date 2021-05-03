@@ -26,7 +26,7 @@ negligible with large input sizes), the time complexity can be simplified to O(n
 
 -Task 4
 # Time analysis
-# 
+
 Our above code with dictionay access is simple array data structure access and according to 
 https://www.bigocheatsheet.com/ & udacity lesson explain Big(O) we observe below
 The get_senders_num_list has, get_caller_receivers_num_list and get_markts_outgoing 
