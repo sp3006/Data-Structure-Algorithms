@@ -8,19 +8,28 @@ No matter the size of the input data, the running time will always be the same
 - Task 1
 Time Complexity - O(n)
 Linear Time — O(n) complexity observed during the execution of the task 1 as eventhough
-it has two for loop that dependent on input, each one interating from 1 to n this resutls input
+it has two for loop that dependent on input, each one iterating from 1 to n this resutls input
 O(2n) which the time complexity as O(n)
 
 - Task 2
+- Linear Time — O(n)
+This task too have two for loops it has each one iterating from 1 to n this resutls input
+O(2n) which the time complexity as O(n) 
 
+- Task 3
+- Quasilinear Time — O(n log n)
+The Task 3 has two for loops with embedded in list comprehensions. The input size is larger for this 
+task and it is resulting in O(2n). We are also combining the two outputs and is resulting in 0(2n + nlogn). 
+However following the Big-O rule of dropping non-dominant terms (less dominant terms in Big-O are 
+negligible with large input sizes), the time complexity can be simplified to O(nlog(n))
 
 
 -Task 4
 # Time analysis
 # 
-# Our above code with dictionay access is simple array data structure access and according to 
-# https://www.bigocheatsheet.com/ & udacity lesson explain Big(O) we observe below
-# The get_senders_num_list has, get_caller_receivers_num_list and get_markts_outgoing 
-# O(n) time complexity which can be represented as O(3n)
-# The call using sorted function sorted(get_markts_outgoing) O(nlogn) complexity
-# O(3n) + O(nlogn) --> O(3n + nlog(n) ) --> Θ(n log(n))
+Our above code with dictionay access is simple array data structure access and according to 
+https://www.bigocheatsheet.com/ & udacity lesson explain Big(O) we observe below
+The get_senders_num_list has, get_caller_receivers_num_list and get_markts_outgoing 
+O(n) time complexity which can be represented as O(3n)
+The call using sorted function sorted(get_markts_outgoing) O(nlogn) complexity
+O(3n) + O(nlogn) --> O(3n + nlog(n) ) --> Θ(n log(n))
