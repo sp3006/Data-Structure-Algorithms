@@ -1,4 +1,17 @@
 
+- Task 0
+Constant Time — O(1)
+An algorithm is said to have a constant time when it is not dependent on the input data (n). 
+No matter the size of the input data, the running time will always be the same
+
+
+- Task 1
+Time Complexity - O(n)
+Linear Time — O(n) complexity observed during the execution of the task 1 as eventhough
+it has two for loop that dependent on input, each one interating from 1 to n this resutls input
+O(2n) which the time complexity as O(n)
+
+- Task 2
 
 
 
