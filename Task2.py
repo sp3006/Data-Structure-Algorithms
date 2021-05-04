@@ -35,9 +35,9 @@ for call in calls:
         # as default value
         # .get(<key>) searches dictionary d for <key> and returns the associated value if it is found. 
         # If <key> is not found, it returns None
-        print("This is " , d.get(phone, i))
-        d[phone] = d.get(phone, i) + int(call[3])
-        print(d[phone])
+        # print("This is " , d.get(phone, i))
+        d[phone] = d.get(phone, 0) + int(call[3])
+        # print(d[phone])
 longest_call_duration = max(d.items(), key=operator.itemgetter(i))
 
 print(longest_call_duration[0], 'spent the longest time,', longest_call_duration[1],

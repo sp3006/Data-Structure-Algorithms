@@ -52,16 +52,44 @@ The percentage should have 2 decimal digits
 # first declare the empty list variable to collect the output form the
 # for loops in two stages with if coditions however we are using
 # list comprehension in below implementations
-get_numbers_called_by_banglore_population = [call[1] for call in calls if call[0][:5] == '(080)']
+
+dialed_num = []
+for i in range(len(calls)):
+  # Removing the generalization from the code and checking additional 
+  # conditions 
+  # for record in calls:
+  # if record[0] starts with (080):
+      #if record[1] starts with '(0' then add what is between '(' and ')' to the container. 
+      #if record[1] starts with '140' then add '140' to the container.
+      #if record[1] starts with 7, 8, or 9 then add the first four digits of record[1] to the container.
+    if calls[i][0][:5] == '(080)':
+        if calls[i][1][0] == '(':
+            par_index = calls[i][1].find(')')
+            dialed_num.append(calls[i][1][:par_index+1])
+        elif calls[i][1][:3] == '140':
+          
+            dialed_num.append('140')
+        else:
+            dialed_num.append(calls[i][1][:4])
+
+# We need this to calculate percent
+get_total_dialed_num= len(dialed_num)
+
+# count the total number of 
+count = dialed_num.count('(080)')
+# get the distincs dailed_num
+dialed_num = sorted(set(dialed_num))
+print("The numbers called by people in Bangalore have codes:")
+for code in dialed_num:
+    print(code)
+
+# Part B
+
+pct = count * 100 / get_total_dialed_num
+print("{} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(round(pct, 2)))
+
 # in below we will check if the number has closed bracket
 # check if it has open  and closed brackets
 # replace all the ocurrences with zero space charcater
-fetch_std_codes = [phone[:phone.find(')') + 1].replace('(', '').replace(')', '') if ')' in phone else phone[0:4] for phone in
-              get_numbers_called_by_banglore_population]
-print('The numbers called by people in Bangalore have codes:\n' + '\n'.join(sorted(set(fetch_std_codes))))
 
-# PART B
-print()
-print('{0:.2f}'.format(
-    (len([phone for phone in get_numbers_called_by_banglore_population if '(080)' in phone]) / len(get_numbers_called_by_banglore_population)) * 100),
-    'percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.')
+
