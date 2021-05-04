@@ -56,18 +56,19 @@ The percentage should have 2 decimal digits
 dialed_num = []
 for i in range(len(calls)):
   # Removing the generalization from the code and checking additional 
-  # conditions 
-  # for record in calls:
+  # conditions below is the suggested algorith during the review
+  # for every_record in calls:
   # if record[0] starts with (080):
       #if record[1] starts with '(0' then add what is between '(' and ')' to the container. 
       #if record[1] starts with '140' then add '140' to the container.
       #if record[1] starts with 7, 8, or 9 then add the first four digits of record[1] to the container.
     if calls[i][0][:5] == '(080)':
         if calls[i][1][0] == '(':
-            par_index = calls[i][1].find(')')
-            dialed_num.append(calls[i][1][:par_index+1])
+            find_closed_brackets = calls[i][1].find(')')
+           #if record[1] starts with '140' then add '140' to the empty list 
+            dialed_num.append(calls[i][1][:find_closed_brackets+1])
         elif calls[i][1][:3] == '140':
-          
+
             dialed_num.append('140')
         else:
             dialed_num.append(calls[i][1][:4])
